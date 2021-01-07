@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/golang/protobuf/proto"
+	"github.com/kaspanet/protoc-gen-doc/extensions"
+	. "github.com/kaspanet/protoc-gen-doc/extensions/validator_field"
 	validator "github.com/mwitkow/go-proto-validators"
-	"github.com/pseudomuto/protoc-gen-doc/extensions"
-	. "github.com/pseudomuto/protoc-gen-doc/extensions/validator_field"
 	"github.com/stretchr/testify/require"
 )
 

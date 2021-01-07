@@ -7,8 +7,8 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
+	"github.com/kaspanet/protoc-gen-doc/extensions"
 	validator "github.com/mwitkow/go-proto-validators"
-	"github.com/pseudomuto/protoc-gen-doc/extensions"
 )
 
 func init() {

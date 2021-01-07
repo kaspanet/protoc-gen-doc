@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
-	"github.com/pseudomuto/protoc-gen-doc/extensions"
+	"github.com/kaspanet/protoc-gen-doc/extensions"
 	"github.com/pseudomuto/protokit"
 )
 
@@ -66,11 +66,6 @@ func NewTemplate(descs []*protokit.FileDescriptor) *Template {
 		for _, s := range f.Services {
 			file.Services = append(file.Services, parseService(s))
 		}
-
-		sort.Sort(file.Enums)
-		sort.Sort(file.Extensions)
-		sort.Sort(file.Messages)
-		sort.Sort(file.Services)
 
 		files = append(files, file)
 	}

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	gendoc "github.com/pseudomuto/protoc-gen-doc"
+	gendoc "github.com/kaspanet/protoc-gen-doc"
 )
 
 const helpMessage = `
@@ -21,7 +21,7 @@ protoc --doc_out=. --doc_opt=html,index.html:google/*,somedir/* protos/*.proto
 EXAMPLE: Use a custom template
 protoc --doc_out=. --doc_opt=custom.tmpl,docs.txt protos/*.proto
 
-See https://github.com/pseudomuto/protoc-gen-doc for more details.
+See https://github.com/kaspanet/protoc-gen-doc for more details.
 `
 
 // Version returns the currently running version of protoc-gen-doc
