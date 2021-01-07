@@ -10,6 +10,8 @@ HTML, JSON, DocBook and Markdown documentation from comments in your `.proto` fi
 
 It supports proto2 and proto3, and can handle having both in the same context (see [examples](examples/) for proof).
 
+**NOTE**: This is a fork of https://github.com/pseudomuto/protoc-gen-doc
+
 ## Installation
 
 There is a Docker image available (`docker pull pseudomuto/protoc-gen-doc`) that has everything you need to generate
