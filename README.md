@@ -19,7 +19,7 @@ documentation from your protos.
 
 If you'd like to install this locally, you can `go get` it.
 
-`go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc`
+`go get -u github.com/kaspanet/protoc-gen-doc/cmd/protoc-gen-doc`
 
 ## Invoking the Plugin
 
@@ -30,57 +30,6 @@ following format:
 
 The format may be one of the built-in ones ( `docbook`, `html`, `markdown` or `json`)
 or the name of a file containing a custom [Go template][gotemplate].
-
-### Using the Docker Image (Recommended)
-
-The docker image has two volumes: `/out` and `/protos` which are the directory to write the documentation to and the
-directory containing your proto files.
-
-You could generate HTML docs for the examples by running the following:
-
-```
-docker run --rm \
-  -v $(pwd)/examples/doc:/out \
-  -v $(pwd)/examples/proto:/protos \
-  pseudomuto/protoc-gen-doc
-```
-
-By default HTML documentation is generated in `/out/index.html` for all `.proto` files in the `/protos` volume. This can
-be changed by passing the `--doc_opt` parameter to the container.
-
-For example, to generate Markdown for all the examples:
-
-```
-docker run --rm \
-  -v $(pwd)/examples/doc:/out \
-  -v $(pwd)/examples/proto:/protos \
-  pseudomuto/protoc-gen-doc --doc_opt=markdown,docs.md
-```
-
-You can also generate documentation for a single file. This can be done by passing the file(s) to the command:
-
-```
-docker run --rm \
-  -v $(pwd)/examples/doc:/out \
-  -v $(pwd)/examples/proto:/protos \
-  pseudomuto/protoc-gen-doc --doc_opt=markdown,docs.md /protos/Booking.proto [OPTIONALLY LIST MORE FILES]
-```
-
-You can also exclude proto files that match specific path expressions. This is done by passing a second option delimited by `:`.
-For example, you can pass any number of comma separated patterns as the second option:
-
-```
-docker run --rm \
-  -v $(pwd)/examples/doc:/out \
-  -v $(pwd)/examples/proto:/protos \
-  pseudomuto/protoc-gen-doc --doc_opt=:google/*,somepath/*
-```
-
-_**Remember**_: Paths should be from within the container, not the host!
-
-> NOTE: Due to the way wildcard expansion works with docker you cannot use a wildcard path (e.g. `protos/*.proto`) in
-the file list. To get around this, if no files are passed, the container will generate docs for `protos/*.proto`, which
-can be changed by mounting different volumes.
 
 ### Simple Usage
 
